@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/marketing_email/static/css/main.7e382ac3.chunk.css",
+    "main.js": "/marketing_email/static/js/main.6cc091ba.chunk.js",
+    "main.js.map": "/marketing_email/static/js/main.6cc091ba.chunk.js.map",
+    "runtime-main.js": "/marketing_email/static/js/runtime-main.47055ebf.js",
+    "runtime-main.js.map": "/marketing_email/static/js/runtime-main.47055ebf.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/marketing_email/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.bcce87cc.chunk.js": "/marketing_email/static/js/2.bcce87cc.chunk.js",
+    "static/js/2.bcce87cc.chunk.js.map": "/marketing_email/static/js/2.bcce87cc.chunk.js.map",
+    "index.html": "/marketing_email/index.html",
+    "precache-manifest.29cdb7d1f693bc421842cdb33b93e8e3.js": "/marketing_email/precache-manifest.29cdb7d1f693bc421842cdb33b93e8e3.js",
+    "service-worker.js": "/marketing_email/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/marketing_email/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.7e382ac3.chunk.css.map": "/marketing_email/static/css/main.7e382ac3.chunk.css.map",
+    "static/js/2.bcce87cc.chunk.js.LICENSE.txt": "/marketing_email/static/js/2.bcce87cc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47055ebf.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.bcce87cc.chunk.js",
+    "static/css/main.7e382ac3.chunk.css",
+    "static/js/main.6cc091ba.chunk.js"
+  ]
+}
