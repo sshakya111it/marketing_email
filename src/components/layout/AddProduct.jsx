@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import {Form, Button} from 'react-bootstrap';
+import {Form, Button,} from 'react-bootstrap';
 import "./Custom.css";
 
 export default class AddProduct extends Component {
   render() {
     return (
       <div className="container addproduct">
+        <h3>Product Details</h3>
         <form action="" className="white">
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Product Name</Form.Label>
