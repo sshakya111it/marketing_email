@@ -1,11 +1,15 @@
 import Axios from "axios";
 import React, { Component } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Form, Modal } from "react-bootstrap";
 import axios from "axios";
+import CustomerModal from '../modal/CustomerModal';
 
 export default class CustomerList extends Component {
   state = {
     customers: [],
+    addModalShow: false
+
+
   };
   async componentDidMount() {
     let results = await axios
@@ -14,19 +18,24 @@ export default class CustomerList extends Component {
         this.setState({ customers: response.data.results });
       });
   }
-  render() {
+   render() {
+    let addModalClose=()=> this.setState({addModalShow:false});
     let data = this.state.customers.map((list) => {
       return (
-        <tr key={list.id} >
+        <tr key={list.id}>
           <td>{list.first_name}</td>
           <td>{list.last_name}</td>
           <td>{list.email}</td>
           <td>{list.mobile_number}</td>
           <td>{list.customer_address}</td>
           <td>
-            <Button variant="success" size="sm" className="mr-2">
+            <Button variant="success" size="sm" className="mr-2" onClick={()=>this.setState({addModalShow:true})}>
               Edit
             </Button>
+            <CustomerModal 
+              show={this.state.addModalShow}
+              onHide={addModalClose}
+            />
             <Button variant="danger" size="sm">
               Delete
             </Button>
@@ -46,15 +55,13 @@ export default class CustomerList extends Component {
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Email</th >
+                <th>Email</th>
                 <th>Number</th>
                 <th>Address</th>
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
-              {data}
-            </tbody>
+            <tbody>{data}</tbody>
           </Table>
           <br></br>
         </form>
