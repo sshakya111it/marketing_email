@@ -7,32 +7,34 @@ export default class CustomerList extends Component {
   state = {
     customers: [],
   };
-  componentWillMount() {
-    axios.get("http://3.24.149.94/apis/customers").then((response) => {
-      this.setState({ customers: response.data });
-    });
+  async componentDidMount() {
+    let results = await axios
+      .get("http://3.24.149.94/apis/customers")
+      .then((response) => {
+        this.setState({ customers: response.data.results });
+      });
   }
   render() {
-    //   let customers=this.state.customers.map((customers)=>{
-    //     return (
-    //         <tr>
-    //         <td>Samrat</td>
-    //         <td>Shakya</td>
-    //         <td>shakyasamrat@gmail.com</td>
-    //         <td>0452586783</td>
-    //         <td>Sydney</td>
-    //         <td>
-    //           <Button variant="success" size="sm" className="mr-2">
-    //             Edit
-    //           </Button>
-    //           <Button variant="danger" size="sm">
-    //             Delete
-    //           </Button>
-    //         </td>
-    //       </tr>
+    let data = this.state.customers.map((list) => {
+      return (
+        <tr key={list.id} >
+          <td>{list.first_name}</td>
+          <td>{list.last_name}</td>
+          <td>{list.email}</td>
+          <td>{list.mobile_number}</td>
+          <td>{list.customer_address}</td>
+          <td>
+            <Button variant="success" size="sm" className="mr-2">
+              Edit
+            </Button>
+            <Button variant="danger" size="sm">
+              Delete
+            </Button>
+          </td>
+        </tr>
+      );
+    });
 
-    //     )
-    //   });
     return (
       <div className="dashboard container">
         <br></br>
@@ -51,36 +53,7 @@ export default class CustomerList extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Samrat</td>
-                <td>Shakya</td>
-                <td>shakyasamrat@gmail.com</td>
-                <td>0452586783</td>
-                <td>Sydney</td>
-                <td>
-                  <Button variant="success" size="sm" className="mr-2">
-                    Edit
-                  </Button>
-                  <Button variant="danger" size="sm">
-                    Delete
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-                <td>Saroj</td>
-                <td>Subedi</td>
-                <td>subedisarojt@gmail.com</td>
-                <td>0123456789</td>
-                <td>Sydney</td>
-                <td>
-                  <Button variant="success" size="sm" className="mr-2">
-                    Edit
-                  </Button>
-                  <Button variant="danger" size="sm">
-                    Delete
-                  </Button>
-                </td>
-              </tr>
+              {data}
             </tbody>
           </Table>
           <br></br>
@@ -89,35 +62,3 @@ export default class CustomerList extends Component {
     );
   }
 }
-
-// const CustomerList = () => {
-//     return (
-//         <div className="product-list section">
-
-//             <div className="card z-depth-0 product-summary">
-//                 <div className="card-content grey-text text-darken-3">
-//                  <span className="card-title">Bishal Mahat</span>
-//                  <p> bmahat.111it@gmail.com</p>
-//                  <p className="grey-text">025xxxxxx </p>
-//                 </div>
-//             </div>
-//             <div className="card z-depth-0 product-summary">
-//                 <div className="card-content grey-text text-darken-3">
-//                  <span className="card-title">Jay Thapa</span>
-//                  <p>jthapa.111it@gmail.com</p>
-//                  <p className="grey-text">025xxxxxx </p>
-//                 </div>
-//             </div>
-//             <div className="card z-depth-0 product-summary">
-//                 <div className="card-content grey-text text-darken-3">
-//                  <span className="card-title">Samrat Shakya</span>
-//                  <p> sshakya.111it@gmail.com</p>
-//                  <p className="grey-text">025xxxxxxr </p>
-//                 </div>
-//             </div>
-//         </div>
-
-//     )
-
-// }
-// export default CustomerList;
