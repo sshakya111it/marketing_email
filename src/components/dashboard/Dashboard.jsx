@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ProductList from '../product/ProductList';
 import CustomerList from '../customer/CustomerList';
 import  '../layout/Custom.css';
+import CustomerDashData from './customerDash'
+import ProductDashData from './productDash'
 
 
 export default class Dashboard extends Component {
@@ -18,8 +20,8 @@ export default class Dashboard extends Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <td><ProductList /></td>
-                                <td><CustomerList /></td>
+                                <td><CustomerDashData /></td>
+                                <td><ProductDashData /></td>
                             </tr>
                         </tbody>
                     </table>

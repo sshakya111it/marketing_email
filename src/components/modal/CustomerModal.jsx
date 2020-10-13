@@ -5,11 +5,7 @@ import {Modal, Button, Form} from 'react-bootstrap'
 export default class CustomerModal extends Component {
     constructor(props){
         super(props);
-        state={
-            newCustomerData:{
-                first_name: ''
-            }
-        }
+
     }
     render() {
         return (
