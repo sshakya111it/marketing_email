@@ -26,27 +26,22 @@ export default class CustomerModal extends Component {
           <div className="container">
           <form action="" className="white">
           <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>First Name</Form.Label>
+            <Form.Label>Product Name</Form.Label>
             <Form.Control type="text" />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Last Name</Form.Label>
+            <Form.Label>Product Price</Form.Label>
             <Form.Control type="text" />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Product Category</Form.Label>
             <Form.Control type="text" />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Number</Form.Label>
-            <Form.Control type="text" />
+            <Form.Label>Product Description</Form.Label>
+            <Form.Control as="textarea" rows="3" />
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Address</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
-
-          <Button variant="primary">Update Customer</Button>
+          <Button variant="primary">Update Product</Button>
         </form>
           </div>
        </Modal.Body>

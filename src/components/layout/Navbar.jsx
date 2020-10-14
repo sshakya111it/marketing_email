@@ -7,7 +7,7 @@ export default function Appbar() {
   return (
     <div>
       <container>
-        <Navbar collapseOnSelect expand="xl" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="xl" bg="primary" variant="dark">
           <Navbar.Brand className=" Brand " href="/">
             111IT Email Marketing
           </Navbar.Brand>
