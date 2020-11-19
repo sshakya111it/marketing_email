@@ -13,8 +13,10 @@ export default class CustomerList extends Component {
   };
   async componentDidMount() {
     let results = await axios
-      .get("http://3.24.149.94/apis/customers")
+      .get("http://13.55.254.225/apis/customers/")
       .then((response) => {
+        console.log(response)
+
         this.setState({ customers: response.data.results });
       });
   }

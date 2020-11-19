@@ -8,6 +8,7 @@ export default class CustomerModal extends Component {
         this.state = {
            
         }
+
     }
     render() {
         return (

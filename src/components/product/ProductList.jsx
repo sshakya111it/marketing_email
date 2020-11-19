@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Table, Button, Form, Modal } from "react-bootstrap";
 import axios from "axios";
 import ProductModal from '../modal/ProductModal';
+import "./productList.css";
 
 export default class ProductList extends Component {
   state = {
@@ -13,7 +14,7 @@ export default class ProductList extends Component {
   };
   async componentDidMount() {
     let results = await axios
-      .get("http://3.24.149.94/apis/customers")
+      .get("http://13.55.254.225/apis/products/")
       .then((response) => {
         this.setState({ products: response.data.results });
       });
@@ -23,11 +24,12 @@ export default class ProductList extends Component {
     let data = this.state.products.map((list) => {
       return (
         <tr key={list.id}>
-          <td>{list.first_name}</td>
-          <td>{list.last_name}</td>
-          <td>{list.email}</td>
-          <td>{list.mobile_number}</td>
-          <td>{list.customer_address}</td>
+          <td><img src={list.product_image}></img></td>
+          <td>{list.title}</td>
+          <td>{list.price}</td>
+          <td>{list.discount_price}</td>
+          <td>{list.description}</td>
+          <td>{list.product_address}</td>
           <td>
             <Button variant="success" size="sm" className="mr-2" onClick={()=>this.setState({addModalShow:true})}>
               Edit
@@ -53,15 +55,39 @@ export default class ProductList extends Component {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Number</th>
-                <th>Address</th>
-                <th>Actions</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Discount Price</th>
+                <th>Product Description</th>
+                <th>Product Location</th>
+                <th>Action</th>
               </tr>
             </thead>
-            <tbody>{data}</tbody>
+            <tbody>
+            {/* <tr>
+                <td>
+                    Mobile
+                </td>
+                <td>
+                    1400
+                </td>
+                <td>
+                    Electornics
+                </td>
+                <td>
+                    XYZ XYZ
+                </td>
+                <Button variant="success" size="sm" className="mr-2" onClick={()=>this.setState({addModalShow:true})}>
+              Edit
+            </Button>
+
+            <Button variant="danger" size="sm">
+              Delete
+            </Button>
+
+            </tr> */} {data}
+            </tbody>
           </Table>
           <br></br>
         </form>
