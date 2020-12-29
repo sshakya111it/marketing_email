@@ -58,6 +58,3 @@ export default class CustomerModal extends Component {
         );
     }
 }
-
-
-

@@ -14,9 +14,9 @@ export default class ProductList extends Component {
   };
   async componentDidMount() {
     let results = await axios
-      .get("http://13.55.254.225/apis/products/")
+      .get("http://localhost:3000/customer")
       .then((response) => {
-        this.setState({ products: response.data.results });
+        this.setState({ products: response.data });
       });
   }
    render() {
@@ -65,28 +65,7 @@ export default class ProductList extends Component {
               </tr>
             </thead>
             <tbody>
-            {/* <tr>
-                <td>
-                    Mobile
-                </td>
-                <td>
-                    1400
-                </td>
-                <td>
-                    Electornics
-                </td>
-                <td>
-                    XYZ XYZ
-                </td>
-                <Button variant="success" size="sm" className="mr-2" onClick={()=>this.setState({addModalShow:true})}>
-              Edit
-            </Button>
-
-            <Button variant="danger" size="sm">
-              Delete
-            </Button>
-
-            </tr> */} {data}
+                    {data}
             </tbody>
           </Table>
           <br></br>
