@@ -1,6 +1,7 @@
 import React, { Component, useState} from "react";
 import {Form, Button, Dropdown } from 'react-bootstrap';
 import "./Custom.css";
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios';
 
 class AddProduct extends Component {
@@ -183,7 +184,7 @@ render() {
                               }}
                       />
                   </Form.Group>
-                  <Button variant="primary" onClick={this.addProduct.bind(this)} >Add Product</Button>
+                  <Link to="./productlist"><Button variant="primary" onClick={this.addProduct.bind(this)} >Add Product</Button></Link>
                   </form>
               </div>
           <br />

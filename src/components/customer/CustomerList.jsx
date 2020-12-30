@@ -13,7 +13,7 @@ import {
 } from 'reactstrap';
 import axios from 'axios';
 
-class CustomerDashboard extends Component {
+class CustomerList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -245,93 +245,8 @@ class CustomerDashboard extends Component {
     }
 }
 
-export default CustomerDashboard;
+export default CustomerList;
 
 
 
-{/*import Axios from "axios";
-import React, { Component } from "react";
-import { Table, Button, Form, Modal } from "react-bootstrap";
-import axios from "axios";
-import CustomerModal from '../modal/CustomerModal';
-import { Link, Redirect } from 'react-router-dom'
 
-export default class CustomerList extends Component {
-  state = {
-    customers: [],
-    addModalShow: false,
-  };
- componentDidMount() {
-    this._refreshCustomers();
-
-  }
-  async _refreshCustomers(){
-    let results = await axios
-    .get("http://localhost:3000/customer")
-    .then((response) => {
-      console.log(response)
-
-      this.setState({ customers: response.data });
-    });
-
-  }
-
-  deleteCustomer(id) {
-    axios.delete('http://localhost:3000/customer/' + id).then(response => {
-        this._refreshCustomers();
-    });
-}
-
-   render() {
-    let addModalClose=()=> this.setState({addModalShow:false});
-    let data = this.state.customers.map((list) => {
-      return (
-        <tr key={list.id}>
-          <td>{list.first_name}</td>
-          <td>{list.last_name}</td>
-          <td>{list.email}</td>
-          <td>{list.mobile_number}</td>
-          <td>{list.customer_address}</td>
-          <td>
-            <Button variant="success" size="sm" className="mr-2" 
-            onClick={()=>this.setState({addModalShow:true})}>
-              Edit
-            </Button>
-            <CustomerModal 
-              show={this.state.addModalShow}
-              onHide={addModalClose}
-            />
-            <Button variant="danger" size="sm" onClick={() => this.deleteCustomer(list.id)}>
-              Delete
-            </Button>
-          </td>
-        </tr>
-      );
-    });
-
-    return (
-      <div className="dashboard container">
-        <br></br>
-        <h2>Customer List</h2>
-        <br></br>
-        <form>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Number</th>
-                <th>Address</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>{data}</tbody>
-          </Table>
-          <br></br>
-        </form>
-      </div>
-      
-    );
-  }
-}*/}
