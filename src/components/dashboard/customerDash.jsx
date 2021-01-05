@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Table, Button, Form, Modal, FormControl } from "react-bootstrap";
 import axios from "axios";
+import CustomerCheckbox from "../SelectionandSend/CustomerCheckbox"
+import SelectAllCheckbox from "../SelectionandSend/selectallcheckbox"
+
 
 export default class CustomerList extends Component {
   state = {
@@ -21,7 +24,7 @@ export default class CustomerList extends Component {
     let data = this.state.customers.map((list) => {
       return (
         <tr key={list.id}>
-        <td><FormControl type='checkbox'></FormControl></td>
+        <td><CustomerCheckbox /></td>
           <td>{list.first_name}</td>
           <td>{list.last_name}</td>
           <td>{list.email}</td>
@@ -38,7 +41,7 @@ export default class CustomerList extends Component {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th><FormControl type='checkbox'></FormControl></th>
+                <th><SelectAllCheckbox /></th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>

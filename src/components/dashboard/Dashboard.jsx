@@ -4,6 +4,7 @@ import CustomerList from '../customer/CustomerList';
 import  '../layout/Custom.css';
 import CustomerDashData from './customerDash'
 import ProductDash from './productDash'
+import { Link, Redirect } from 'react-router-dom'
 
 
 export default class Dashboard extends Component {
@@ -18,14 +19,15 @@ export default class Dashboard extends Component {
                             <tr>
                                 <td><ProductDash /></td>
                                 <td><CustomerDashData /></td>
+                                
 
                             </tr>
                         </tbody>
                     </table>
                     <br></br>
-                    <button class="btn waves-effect waves-light " type="submit" name="action">Send Email
+                    <Link to="./demo"><button class="btn waves-effect waves-light " type="submit" name="action">Send Email
                         <i class="material-icons right">send</i>
-                    </button>
+                    </button> </Link>
                 </form>
                 
             </div>

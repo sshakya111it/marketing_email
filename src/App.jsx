@@ -9,7 +9,8 @@ import SignOut from "./components/auth/SignOut";
 import NotFound from "./components/layout/NotFound";
 import ProductList from "./components/product/ProductList";
 import CustomerList from "./components/customer/CustomerList";
-import EditCustomer from "./components/modal/CustomerModal"
+import EditCustomer from "./components/modal/CustomerModal";
+import Demo from "./components/demo"
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/productlist" component={ProductList} />
           <Route path="/customerlist" component={CustomerList} />
           <Route path="/signout" component={SignOut} />
+          <Route path="/demo" component={Demo} />
           {/*<Route component={NotFound} />*/}
           <Route path="/editcustomer" component={EditCustomer}/>
         </Switch>
