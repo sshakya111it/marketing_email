@@ -10,20 +10,7 @@ class ProductCheckbox extends Component{
             selectedProduct: []
      }
     }
-    onChange = e => {
-        const selectedProduct = [...this.state.selectedProduct];
-        this.setState({[e.target.name] : e.target.checked});
-        selectedProduct.push({
-            id: e.target.id,  value: e.target.id
-        })
-        this.setState({
-            selectedProduct
-        },
-        () => {
-            console.log(this.state);
-        }
-        );   
-    }
+
  
 
     render(){
@@ -35,7 +22,7 @@ class ProductCheckbox extends Component{
                        checked={isChecked}
                        name="isChecked"
                        id= {this.props.productSelected}
-                       onChange={this.onChange}
+                       onChange={this.props.onChange} 
 
                 ></input>
 
